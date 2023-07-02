@@ -26,13 +26,13 @@ router.post('/add', async (req, res) => {
 //3.2 api for find students whos don't have mentor
 router.get("/find/nomentor", async (req, res) => {
     try {
-        const data = [""," ","  "]
+        const data = ["", " ", "  "]
         const response = await unassignedMentor(data)
         console.log(response);
         if (!response) {
             return res.status(400).json({ message: "Error in posting input" })
         }
-        res.status(200).json({ "below students mentors not assigned yet": response})
+        res.status(200).json({ "below students mentors not assigned yet": response })
     }
     catch (err) {
         console.log(err);

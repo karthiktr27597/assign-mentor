@@ -1,5 +1,5 @@
 import express from "express"
-import { getAllMentor, postCreateMentor, putEditMentor, unassignedMentor } from "../Controllers/mentor.js";
+import { getAllMentor, postCreateMentor, putEditMentor } from "../Controllers/mentor.js";
 
 //Intializing the routes
 const router = express.Router();
@@ -38,7 +38,7 @@ router.get("/nomentor", async (req, res) => {
         if (!response.lastErrorObject.updatedExisting) {
             return res.status(400).json({ message: "Error in posting input" })
         }
-        res.status(200).json({ "Updated Successfully": update, status: response.value})
+        res.status(200).json({ "Updated Successfully": update, status: response.value })
     }
     catch (err) {
         console.log(err);
