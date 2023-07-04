@@ -7,7 +7,7 @@ const mongoConnectString = process.env.MONGO_URL
 
 export async function dbConnection() {
     const client = new MongoClient(mongoConnectString);
-    client.connect();
+    await client.connect();
     console.log("MongoDB connected successfully")
     return client
 }
